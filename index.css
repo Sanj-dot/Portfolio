@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: hsl(251, 30%, 98%);
+  --foreground: hsl(218, 25%, 25%);
+  --muted: hsl(251, 20%, 96%);
+  --muted-foreground: hsl(218, 15%, 55%);
+  --popover: hsl(0, 0%, 100%);
+  --popover-foreground: hsl(218, 25%, 25%);
+  --card: hsl(0, 0%, 100%);
+  --card-foreground: hsl(218, 25%, 25%);
+  --border: hsl(251, 15%, 90%);
+  --input: hsl(251, 15%, 90%);
+  --primary: hsl(251, 60%, 65%);
+  --primary-foreground: hsl(0, 0%, 100%);
+  --secondary: hsl(251, 20%, 96%);
+  --secondary-foreground: hsl(218, 25%, 25%);
+  --accent: hsl(274, 55%, 78%);
+  --accent-foreground: hsl(274, 55%, 25%);
+  --destructive: hsl(0, 84.2%, 60.2%);
+  --destructive-foreground: hsl(210, 40%, 98%);
+  --ring: hsl(251, 60%, 65%);
+  --radius: 0.5rem;
+}
+
+.dark {
+  --background: hsl(218, 25%, 8%);
+  --foreground: hsl(251, 30%, 98%);
+  --muted: hsl(218, 20%, 12%);
+  --muted-foreground: hsl(218, 15%, 65%);
+  --popover: hsl(218, 25%, 8%);
+  --popover-foreground: hsl(251, 30%, 98%);
+  --card: hsl(218, 25%, 8%);
+  --card-foreground: hsl(251, 30%, 98%);
+  --border: hsl(218, 20%, 18%);
+  --input: hsl(218, 20%, 18%);
+  --primary: hsl(251, 60%, 65%);
+  --primary-foreground: hsl(0, 0%, 100%);
+  --secondary: hsl(218, 20%, 12%);
+  --secondary-foreground: hsl(251, 30%, 98%);
+  --accent: hsl(274, 55%, 78%);
+  --accent-foreground: hsl(218, 25%, 8%);
+  --destructive: hsl(0, 62.8%, 30.6%);
+  --destructive-foreground: hsl(0, 0%, 98%);
+  --ring: hsl(251, 60%, 65%);
+  --radius: 0.5rem;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-inter antialiased bg-background text-foreground;
+    font-feature-settings: "kern" 1, "liga" 1, "calt" 1;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  /* Professional headings */
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-inter;
+    font-feature-settings: "kern" 1, "liga" 1, "calt" 1;
+    letter-spacing: -0.02em;
+    font-weight: 600;
+  }
+  
+  /* Enhanced readability for body text */
+  p {
+    @apply font-inter;
+    line-height: 1.7;
+    letter-spacing: 0.01em;
+    font-weight: 400;
+  }
+}
+
+@layer utilities {
+  .font-inter {
+    font-family: 'Inter', sans-serif;
+  }
+
+  .animate-spin-slow {
+    animation: spin 20s linear infinite;
+  }
+  
+  .animate-bounce-slow {
+    animation: bounce 6s ease-in-out infinite;
+  }
+  
+  .animate-pulse-slow {
+    animation: pulse 4s ease-in-out infinite;
+  }
+  
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+  }
+  
+  .backdrop-blur-sm {
+    backdrop-filter: blur(4px);
+  }
+  
+  .backdrop-blur-md {
+    backdrop-filter: blur(8px);
+  }
+}
